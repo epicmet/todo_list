@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo List #1</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="list-container">
+            <div class="header">
+                <img src="https://img.icons8.com/color/96/000000/list.png" id="header-icon">
+                <h3 id="header-text">Todo</h3>
+            </div>
+            <div class="middle-container">
+                <div class="middle">
+                    <div class="default-img">
+                        <img src="https://img.icons8.com/nolan/96/todo-list.png" id="middle-icon">
+                        <h2 id="middle-text">Add a task to get started</h2>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item"></div>
+            
+            <div class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p>Add new task :</p>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-task-informations">
+                        <div class="modal-text">
+                            <input type="text" placeholder="Enter a title" class="modal-input task-text">
+                            <input type="date" class="modal-input task-date">
+                            <input type="time" class="modal-input task-time">
+                        </div>
+                        <div class="modal-priority">
+                            <div class="modal-priority-btn modal-btn-red" data-color = "red"></div>
+                            <div class="modal-priority-btn modal-btn-blue" data-color="blue"></div>
+                            <div class="modal-priority-btn modal-btn-green"></div>
+                            <div class="modal-priority-btn modal-btn-yellow"></div>
+                        </div>
+                    </div>
+                    <div class="modal-btn-div">
+                        <button class="modal-btn">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-btn">
+                <button class="btn">+</button>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
