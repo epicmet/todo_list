@@ -1,53 +1,24 @@
-const modalPriorityBtn = document.querySelectorAll('.modal-priority-btn');
 let priorityColor;
-const remainingIndexes = (num) => {
-    for(let i=0;i<4;i++){
-        if (i !== num){
-            modalPriorityBtn[i].style.width= '13px';
-            modalPriorityBtn[i].style.height= '13px';
-        }
-    }
-};
-const selectedmodalPriorityBtn = (index) =>{
-    modalPriorityBtn[index].style.width= '16px';
-    modalPriorityBtn[index].style.height= '16px';
-    remainingIndexes(index)
-    priorityColor = index;
-}
-
-document.querySelector(".modal-priority").addEventListener("click" , (event) =>{
+const modalPriorityBtn = document.querySelectorAll('.modal-priority-btn');
+const modalPriorityDiv = document.querySelector(".modal-priority");
+modalPriorityDiv.addEventListener("click" , (event) =>{
+    if (!event.target.getAttribute("data-color")) return;
     let color = event.target.getAttribute("data-color")
     priorityColor = color;
-    })
-
-// modalPriorityBtn[0].addEventListener('click', (e)=> {
-//     modalPriorityBtn[0].style.width= '16px';
-//     modalPriorityBtn[0].style.height= '16px';
-//     selectedmodalPriorityBtn(0)
-//     console.log(e)
-// });
-// modalPriorityBtn[1].addEventListener('click', (e)=> {
-//     modalPriorityBtn[1].style.width= '16px';
-//     modalPriorityBtn[1].style.height= '16px';
-//     selectedmodalPriorityBtn(1)
-// });
-// modalPriorityBtn[2].addEventListener('click', (e)=> {
-//     modalPriorityBtn[2].style.width= '16px';
-//     modalPriorityBtn[2].style.height= '16px';
-//     selectedmodalPriorityBtn(2)
-// });
-// modalPriorityBtn[3].addEventListener('click', (e)=> {
-//     modalPriorityBtn[3].style.width= '16px';
-//     modalPriorityBtn[3].style.height= '16px';
-//     selectedmodalPriorityBtn(3)
-// });
+    modalPriorityBtn.forEach((div) => {
+        div.style.width = '13px';
+        div.style.height = '13px';
+    });
+    event.target.style.width = '16px';
+    event.target.style.height = '16px';
+});
 
 let items = [];
 const taskText = document.querySelector('.task-text')
 const taskDate = document.querySelector('.task-date')
 const taskTime = document.querySelector('.task-time')
 const newTask = () => {
-    if (taskText.value === "" || taskDate.value === "" || taskTime.value === "") {
+    if (taskText.value === "") {
         alert("Please fill up every inputs");
     }
     else {
@@ -58,7 +29,7 @@ const newTask = () => {
             color : priorityColor,
             done : false
         }
-        items.  push(obj);
+        items.push(obj);
         addTask(obj);
         // itemDiv.innerHTML = "";
         // for (item of items) {
@@ -71,7 +42,7 @@ const addTask = (obj) => {
     task.classList.add('box');
     task.innerHTML = `
                     <div class="text-box-div">
-                        <button class="priority-btn" style= "backgroundColor:${obj.color};"></button>
+                        <button class="priority-btn"></button>
                         <div class="box-text">
                             <p class="item-text">${obj.title}</p>
                             <p class="item-date">${obj.date} - ${obj.time}</p>
@@ -82,23 +53,9 @@ const addTask = (obj) => {
                     </div>
                     `
         itemDiv.appendChild(task);
-        // const taskPriorityBtn = document.querySelector('.priority-btn');
-        // taskPriorityBtn.style.backgroundColor = obj.color;
-        // if(obj.color === 0) {
-        //     taskPriorityBtn.style.backgroundColor = 'red';
-        // }
-        // else if(obj.color === 1) {
-        //     taskPriorityBtn.style.backgroundColor = 'blue';
-        // }
-        // else if(obj.color === 2) {
-        //     taskPriorityBtn.style.backgroundColor = 'green';
-        // }
-        // else if(obj.color === 3) {
-        //     taskPriorityBtn.style.backgroundColor = 'yellow';
-        // }
-        // else {
-        //     taskPriorityBtn.style.backgroundColor = 'red';
-        // }
+        const allTasks = document.querySelectorAll(".priority-btn")
+        const taskPriorityBtn = allTasks[allTasks.length-1]
+        taskPriorityBtn.style.backgroundColor = obj.color;
         closeModal();
 };
 const addBtn = document.querySelector('.btn')
@@ -112,7 +69,6 @@ const closeModal = () => {
     taskText.value = "";
     taskTime.value = "";
     taskDate.value = "";
-    remainingIndexes(4); //to resize all priority buttons
 };
 addBtn.addEventListener('click', showModal);
 closeBtn.addEventListener('click', closeModal);
