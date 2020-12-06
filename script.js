@@ -31,10 +31,6 @@ const newTask = () => {
         }
         items.push(obj);
         addTask(obj);
-        // itemDiv.innerHTML = "";
-        // for (item of items) {
-        //     addTask(item)
-        // };
     }
 };
 const addTask = (obj) => {

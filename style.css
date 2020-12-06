@@ -103,7 +103,6 @@ p,h3,h2{
     min-width: 10px;
     margin-right: 5px;
     border: none;
-    /* background-color: red; */
     border-radius: 50px;
     align-self: center;
 }
@@ -136,19 +135,7 @@ p,h3,h2{
 .checked-task{
     background-color: #c0c0c0;
 }
-/* .check-box:hover{
-    display: flex;
-} */
-/* .check-img{
-    min-width: 40px;
-    min-height: 40px;
-}
-.close-img{
-    width: 12px;
-    height: 12px;
-    min-width: 12px;
-    min-height: 12px;
-} */
+
 /* modal */
 .modal{
     display: none;
