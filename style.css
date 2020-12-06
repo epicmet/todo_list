@@ -126,10 +126,15 @@ p,h3,h2{
     font-size: 10px;
 }
 .check-box-div{
-    display: none;
+    margin: 5px;
+    cursor: pointer;
+    display: flex;
     justify-content: flex-end;
     align-items: flex-start;
     justify-self: flex-end;
+}
+.checked-task{
+    background-color: #c0c0c0;
 }
 /* .check-box:hover{
     display: flex;

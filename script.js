@@ -1,4 +1,4 @@
-let priorityColor;
+let priorityColor = "red";
 const modalPriorityBtn = document.querySelectorAll('.modal-priority-btn');
 const modalPriorityDiv = document.querySelector(".modal-priority");
 modalPriorityDiv.addEventListener("click" , (event) =>{
@@ -56,6 +56,9 @@ const addTask = (obj) => {
         const allTasks = document.querySelectorAll(".priority-btn")
         const taskPriorityBtn = allTasks[allTasks.length-1]
         taskPriorityBtn.style.backgroundColor = obj.color;
+        const checkBoxAll = document.querySelectorAll('.check-box')
+        let checkBox = checkBoxAll[checkBoxAll.length -1]
+        onTask(checkBox,task);
         closeModal();
 };
 const addBtn = document.querySelector('.btn')
@@ -69,6 +72,10 @@ const closeModal = () => {
     taskText.value = "";
     taskTime.value = "";
     taskDate.value = "";
+    modalPriorityBtn.forEach((div) => {
+        div.style.width = '13px';
+        div.style.height = '13px';
+    });
 };
 addBtn.addEventListener('click', showModal);
 closeBtn.addEventListener('click', closeModal);
@@ -81,4 +88,16 @@ modalAddBtn.addEventListener('click', ()=> {
     if (itemDiv.innerHTML !== "") {
         middleDiv.style.display = "none";
     }
-})
+});
+
+const onTask = (i,task) => {
+    i.addEventListener('click', ()=>{
+        task.classList.toggle('checked-task')
+        let x = setTimeout(()=>{
+            if(i.checked){
+                task.remove()
+            }
+            else return;
+        },2000)
+    });
+};
