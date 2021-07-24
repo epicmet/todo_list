@@ -1,6 +1,7 @@
 .vscode/
 node_modules/
 inspiration/
+oldCode/
 *.log
 *.jpg
 .vercel
