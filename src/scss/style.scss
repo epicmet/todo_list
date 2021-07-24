@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -68,6 +72,51 @@ main {
 
 .default-bg__text {
   margin-top: 1rem;
+  font-size: 2rem;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  border: 1px red solid;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.task__texts {
+}
+
+.task__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task__todo {
+  font-size: 4rem;
+}
+
+.task__date {
+  font-size: 3rem;
+}
+
+.task__done {
+  margin-top: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: blue;
+}
+
+.task__edit {
   font-size: 2rem;
 }
 

@@ -1,5 +1,7 @@
 * { -webkit-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0; }
 
+a { text-decoration: none; }
+
 html { font-size: 62.5%; }
 
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; height: 100vh; background: -webkit-gradient(linear, left top, right top, from(#5d61e3), to(#5d61a0)); background: linear-gradient(90deg, #5d61e3 0%, #5d61a0 100%); }
@@ -17,6 +19,20 @@ main { background: #fff; width: 80vw; height: 80vh; padding: 1.5rem; display: -m
 .default-bg__img { width: 15%; }
 
 .default-bg__text { margin-top: 1rem; font-size: 2rem; }
+
+.tasks { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.task { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; width: 90%; border: 1px red solid; margin: 10px 0; padding: 10px; }
+
+.task__buttons { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.task__todo { font-size: 4rem; }
+
+.task__date { font-size: 3rem; }
+
+.task__done { margin-top: 15px; width: 30px; height: 30px; border-radius: 50%; background-color: blue; }
+
+.task__edit { font-size: 2rem; }
 
 .footer { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
 
