@@ -31,10 +31,11 @@ body {
 }
 
 main {
-  background: #fff;
+  background: #f4f4f4;
 
-  width: 80vw;
-  height: 80vh;
+  width: 90vw;
+  height: 90vh;
+  border-radius: 10px;
 
   padding: 1.5rem;
   display: grid;
@@ -85,9 +86,10 @@ main {
   display: flex;
   justify-content: space-between;
   width: 90%;
-  border: 1px red solid;
+  border-radius: 10px;
   margin: 10px 0;
   padding: 10px;
+  box-shadow: 0px 5px 20px #c3c3c3;
 }
 
 .task__texts {
@@ -108,16 +110,26 @@ main {
   font-size: 3rem;
 }
 
-.task__done {
+.task__action {
   margin-top: 15px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: blue;
+  border: 3px rgba(93, 97, 227, 1) solid;
+  background-color: #fff;
 }
 
-.task__edit {
+.action--done {
+  border: none;
+  background-color: greenyellow;
+}
+
+.task__edit a {
   font-size: 2rem;
+}
+
+.task__edit a:hover {
+  color: rgba(93, 97, 160, 1);
 }
 
 .footer {
