@@ -60,6 +60,8 @@ main { background: #fff; width: 90vw; height: 90vh; border-radius: 10px; padding
 
 .modal__button { padding: 10px; margin: 15px; font-size: 2rem; background-color: #005866; border-radius: 10px; border: none; color: #fff; }
 
+.error { border: 2px solid red; }
+
 @media (min-width: 700px) { main { max-width: 500px; }
   .default-bg { -webkit-transform: translateY(-40px); transform: translateY(-40px); }
   .modal-content { max-width: 450px; max-height: 325px; } }
