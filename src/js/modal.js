@@ -1,6 +1,7 @@
 export const openModal = () => {
   const modal = document.querySelector(".modal");
   modal.style.display = "flex";
+  document.querySelector(".modal__input").focus();
 };
 
 export const closeModal = () => {
