@@ -23,6 +23,7 @@ export const validateData = () => {
 
   if (!todoInput.value) {
     todoInput.classList.add("error");
+    todoInput.focus();
     return;
   }
 
