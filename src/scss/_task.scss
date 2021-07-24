@@ -1,0 +1,46 @@
+.task {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 10px;
+  box-shadow: 0px 3px 10px darken($white-color, 50%);
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__todo {
+    font-size: 4rem;
+  }
+
+  &__date {
+    font-size: 3rem;
+  }
+
+  &__action {
+    margin-top: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px darken($white-color, 20%) solid;
+  }
+
+  &__edit a {
+    font-size: 2rem;
+    color: $primary-color;
+  }
+
+  &__edit a:hover {
+    color: $accent-color;
+  }
+}
+
+.action--done {
+  border: none;
+  background-color: greenyellow;
+}

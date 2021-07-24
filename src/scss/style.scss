@@ -23,15 +23,13 @@ body {
   justify-content: center;
   height: 100vh;
 
-  background: linear-gradient(
-    90deg,
-    rgba(93, 97, 227, 1) 0%,
-    rgba(93, 97, 160, 1) 100%
-  );
+  color: $primary-color;
+
+  background: linear-gradient(90deg, $primary-color 0%, $secondary-color 100%);
 }
 
 main {
-  background: #f4f4f4;
+  background: $white-color;
 
   width: 90vw;
   height: 90vh;
@@ -40,7 +38,7 @@ main {
   padding: 1.5rem;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 6rem auto 6rem;
+  grid-template-rows: 6rem auto 7rem;
 }
 
 .hero {
@@ -48,16 +46,16 @@ main {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
 
-.hero__icon {
-  width: 5rem;
-  height: 5rem;
-}
+  &__icon {
+    width: 60px;
+    height: 60px;
+  }
 
-.hero__title {
-  font-weight: 500;
-  font-size: 3rem;
+  &__title {
+    font-weight: 500;
+    font-size: 4rem;
+  }
 }
 
 .default-bg {
@@ -65,15 +63,15 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-.default-bg__img {
-  width: 15%;
-}
+  &__img {
+    width: 35%;
+  }
 
-.default-bg__text {
-  margin-top: 1rem;
-  font-size: 2rem;
+  &__text {
+    margin-top: 1rem;
+    font-size: 4rem;
+  }
 }
 
 .tasks {
@@ -82,67 +80,27 @@ main {
   align-items: center;
 }
 
-.task {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  border-radius: 10px;
-  margin: 10px 0;
-  padding: 10px;
-  box-shadow: 0px 5px 20px #c3c3c3;
-}
-
-.task__buttons {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.task__todo {
-  font-size: 4rem;
-}
-
-.task__date {
-  font-size: 3rem;
-}
-
-.task__action {
-  margin-top: 15px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 3px rgba(93, 97, 227, 1) solid;
-  background-color: #fff;
-}
-
-.action--done {
-  border: none;
-  background-color: greenyellow;
-}
-
-.task__edit a {
-  font-size: 2rem;
-}
-
-.task__edit a:hover {
-  color: rgba(93, 97, 160, 1);
-}
+@import "task";
 
 .footer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  &__btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    background-color: $primary-color;
+    color: $white-color;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  &__btn:hover {
+    background-color: $secondary-color;
+  }
 }
 
-.footer__btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  background-color: rgba(93, 97, 270, 1);
-  color: #fff;
-  font-size: 30px;
-  font-weight: 700;
-}
 @import "modal";

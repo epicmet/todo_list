@@ -14,7 +14,7 @@
 .modal-content {
   margin: auto;
   padding: 15px;
-  background-color: #fff;
+  background-color: $white-color;
   width: 40vw;
   height: 40vh;
   display: flex;
@@ -59,7 +59,7 @@
   padding: 10px;
   margin: 15px;
   font-size: 2rem;
-  background-color: rgba(93, 97, 270, 1);
+  background-color: $primary-color;
   border-radius: 10px;
   border: none;
   color: #fff;
