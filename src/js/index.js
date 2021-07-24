@@ -8,10 +8,12 @@ window.addEventListener("click", (e) => {
   if (e.target == modal) closeModal();
 });
 
+document.querySelector(".modal__form").addEventListener("submit", (e) => {
+  e.preventDefault();
+});
+
 const modalAddBtn = document.querySelector(".modal__button");
 modalAddBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-
   validateData();
 });
 // add enter event listener
