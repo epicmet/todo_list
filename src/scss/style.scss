@@ -35,10 +35,10 @@ main {
   height: 90vh;
   border-radius: 10px;
 
-  padding: 1.5rem;
+  padding: 1rem;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 6rem auto 7rem;
+  grid-template-rows: 5rem auto 7rem;
 }
 
 .hero {
@@ -48,13 +48,13 @@ main {
   align-items: center;
 
   &__icon {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
   }
 
   &__title {
     font-weight: 500;
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 
@@ -70,7 +70,7 @@ main {
 
   &__text {
     margin-top: 1rem;
-    font-size: 4rem;
+    font-size: 2rem;
   }
 }
 
@@ -88,8 +88,8 @@ main {
   justify-content: flex-end;
 
   &__btn {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     border: none;
     background-color: $primary-color;
