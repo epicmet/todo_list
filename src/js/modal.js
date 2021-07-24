@@ -7,7 +7,6 @@ export const openModal = () => {
 export const closeModal = () => {
   const modal = document.querySelector(".modal");
   modal.style.display = "none";
-  emptyInputs();
 };
 
 export const validateData = () => {
@@ -32,13 +31,21 @@ export const validateData = () => {
     return;
   }
 
-  makeTask();
+  return makeTask();
 };
 
 const makeTask = () => {
   removeErrorClass();
 
-  console.log("also here");
+  let inputText = document.querySelector(".modal__input").value;
+  let inputDate = document.querySelector(".modal__date").value;
+  //TODO: use momentjs to render a better date format
+  return {
+    text: inputText,
+    date: inputDate,
+    //TODO: set pri-btns ( css and js )
+    priBtnColor: "red",
+  };
 };
 
 const removeErrorClass = () => {
@@ -46,7 +53,7 @@ const removeErrorClass = () => {
   document.querySelector(".modal__date").classList.remove("error");
 };
 
-const emptyInputs = () => {
+export const emptyInputs = () => {
   document.querySelector(".modal__input").value = "";
   document.querySelector(".modal__date").value = "";
 };
