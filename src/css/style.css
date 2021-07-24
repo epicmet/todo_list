@@ -40,4 +40,20 @@ main { background: #f4f4f4; width: 90vw; height: 90vh; border-radius: 10px; padd
 
 .footer { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
 
-.footer__btn { width: 50px; height: 50px; border-radius: 50%; border: none; }
+.footer__btn { width: 50px; height: 50px; border-radius: 50%; border: none; background-color: #5d61ff; color: #fff; font-size: 30px; font-weight: 700; }
+
+.modal { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); width: 100%; height: 100%; }
+
+.modal-content { margin: auto; padding: 15px; background-color: #fff; width: 40vw; height: 40vh; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; }
+
+.modal__form { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; }
+
+.modal__title { font-size: 3rem; margin: 10px; }
+
+.modal__input { width: 100%; margin: 15px; padding: 5px; font-size: 2rem; }
+
+.modal__pri-buttons { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+.modal__pri-btn { margin: 10px; background-color: red; width: 15px; height: 15px; border-radius: 50%; border: none; }
+
+.modal__button { padding: 10px; margin: 15px; font-size: 2rem; background-color: #5d61ff; border-radius: 10px; border: none; color: #fff; }

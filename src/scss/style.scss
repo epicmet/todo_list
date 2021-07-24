@@ -92,9 +92,6 @@ main {
   box-shadow: 0px 5px 20px #c3c3c3;
 }
 
-.task__texts {
-}
-
 .task__buttons {
   display: flex;
   flex-direction: column;
@@ -143,4 +140,9 @@ main {
   height: 50px;
   border-radius: 50%;
   border: none;
+  background-color: rgba(93, 97, 270, 1);
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
 }
+@import "modal";
