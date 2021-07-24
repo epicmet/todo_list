@@ -1,0 +1,14 @@
+@media (min-width: 700px) {
+  main {
+    max-width: 500px;
+  }
+
+  .default-bg {
+    transform: translateY(-40px);
+  }
+
+  .modal-content {
+    max-width: 450px;
+    max-height: 325px;
+  }
+}
