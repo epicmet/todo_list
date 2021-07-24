@@ -1,0 +1,60 @@
+@import "config";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  background: linear-gradient(
+    90deg,
+    rgba(93, 97, 227, 1) 0%,
+    rgba(93, 97, 160, 1) 100%
+  );
+}
+
+main {
+  background: #fff;
+
+  width: 500px;
+
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100% 100% 100%;
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero__icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.default-bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
