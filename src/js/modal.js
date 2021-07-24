@@ -7,6 +7,7 @@ export const openModal = () => {
 export const closeModal = () => {
   const modal = document.querySelector(".modal");
   modal.style.display = "none";
+  emptyInputs();
 };
 
 export const validateData = () => {
@@ -42,4 +43,9 @@ const makeTask = () => {
 const removeErrorClass = () => {
   document.querySelector(".modal__input").classList.remove("error");
   document.querySelector(".modal__date").classList.remove("error");
+};
+
+const emptyInputs = () => {
+  document.querySelector(".modal__input").value = "";
+  document.querySelector(".modal__date").value = "";
 };
