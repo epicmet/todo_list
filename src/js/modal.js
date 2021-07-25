@@ -23,32 +23,18 @@ export const validateData = () => {
   if (!todoInput.value) {
     todoInput.classList.add("error");
     todoInput.focus();
-    return;
+    return false;
   }
 
   if (!dateInput.value) {
     dateInput.classList.add("error");
-    return;
+    return false;
   }
 
-  return makeTask();
+  return true;
 };
 
-const makeTask = () => {
-  removeErrorClass();
-
-  let inputText = document.querySelector(".modal__input").value;
-  let inputDate = document.querySelector(".modal__date").value;
-  //TODO: use momentjs to render a better date format
-  return {
-    text: inputText,
-    date: inputDate,
-    //TODO: set pri-btns ( css and js )
-    priBtnColor: "red",
-  };
-};
-
-const removeErrorClass = () => {
+export const removeErrorClass = () => {
   document.querySelector(".modal__input").classList.remove("error");
   document.querySelector(".modal__date").classList.remove("error");
 };

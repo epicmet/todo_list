@@ -1,6 +1,11 @@
-import { openModal, closeModal, validateData, emptyInputs } from "./modal.js";
+import {
+  openModal,
+  closeModal,
+  validateData,
+  removeErrorClass,
+} from "./modal.js";
 
-const tasks = [];
+const arr = [];
 
 // opening and close modal
 const footerBtn = document.querySelector(".footer__btn");
@@ -14,15 +19,30 @@ window.addEventListener("click", (e) => {
   }
 });
 
-// submiting modal form
+// submiting modal form to validate
 const modalFrom = document.querySelector(".modal__form");
 modalFrom.addEventListener("submit", (e) => {
   e.preventDefault();
 
   //validate data and return the task object
-  let task = validateData();
-  tasks.push(task);
-  closeModal();
-  emptyInputs();
+  let valid = validateData();
+  if (valid) makeTask();
   //TODO: sort task by time
 });
+
+// after validation make the task
+const makeTask = () => {
+  removeErrorClass();
+
+  const todoInputValue = document.querySelector(".modal__input").value;
+  const dateInputValue = document.querySelector(".modal__date").value;
+
+  arr.push({
+    text: todoInputValue,
+    date: dateInputValue,
+    priBtn: "red",
+  });
+
+  closeModal();
+  console.log(arr);
+};
