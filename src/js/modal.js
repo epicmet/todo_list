@@ -7,6 +7,7 @@ export const openModal = () => {
 export const closeModal = () => {
   const modal = document.querySelector(".modal");
   modal.style.display = "none";
+  emptyInputs();
 };
 
 export const validateData = () => {
