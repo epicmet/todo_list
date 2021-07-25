@@ -24,24 +24,25 @@ export const validateData = () => {
   if (!todoInput.value) {
     todoInput.classList.add("error");
     todoInput.focus();
-    return;
+    return false;
   }
 
   if (!dateInput.value) {
     dateInput.classList.add("error");
-    return;
+    return false;
   }
 
-  makeTask();
+  return true;
+  // makeTask();
 };
 
-const makeTask = () => {
-  removeErrorClass();
+// const makeTask = () => {
+//   removeErrorClass();
 
-  console.log("also here");
-};
+//   console.log("also here");
+// };
 
-const removeErrorClass = () => {
+export const removeErrorClass = () => {
   document.querySelector(".modal__input").classList.remove("error");
   document.querySelector(".modal__date").classList.remove("error");
 };
