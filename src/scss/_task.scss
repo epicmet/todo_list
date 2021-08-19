@@ -28,7 +28,9 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    border: 2px darken($white-color, 20%) solid;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__edit a {
@@ -41,7 +43,11 @@
   }
 }
 
-.action--done {
-  border: none;
-  background-color: greenyellow;
+.done {
+  background-color: darken($white-color, 15%);
 }
+
+// .action--done {
+//   border: none;
+//   background-color: greenyellow;
+// }

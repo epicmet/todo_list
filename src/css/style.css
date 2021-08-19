@@ -32,13 +32,15 @@ main { background: #fff; width: 90vw; height: 90vh; border-radius: 10px; padding
 
 .task__date { font-size: 2rem; }
 
-.task__action { margin-top: 9px; width: 25px; height: 25px; border-radius: 50%; border: 2px #cccccc solid; }
+.task__action { margin-top: 9px; width: 25px; height: 25px; border-radius: 50%; }
+
+.task__action:hover { cursor: pointer; }
 
 .task__edit a { font-size: 1.5rem; color: #005866; }
 
 .task__edit a:hover { color: #00d4f5; }
 
-.action--done { border: none; background-color: greenyellow; }
+.done { background-color: #d9d9d9; }
 
 .footer { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
 
