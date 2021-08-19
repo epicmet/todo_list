@@ -5,7 +5,7 @@ import {
   removeErrorClass,
 } from "./modal.js";
 
-const arr = [];
+let tasksArr = [];
 
 // opening and close modal
 const footerBtn = document.querySelector(".footer__btn");
@@ -38,13 +38,13 @@ const makeTask = () => {
 
   const id = Date.now();
 
-  arr.push({
+  tasksArr.push({
     text: todoInputValue,
     date: dateInputValue,
     id: id,
   });
 
-  render(arr);
+  render(tasksArr);
 
   closeModal();
 };
@@ -59,7 +59,7 @@ const render = (arr) => {
 
   // Rerender every task
   for (let taskObj of arr) {
-    const { text, date } = taskObj;
+    const { text, date, id } = taskObj;
     // Making article tag and adding its classList
     const article = document.createElement("article");
     article.classList.add("task");
@@ -89,6 +89,9 @@ const render = (arr) => {
     buttonsDiv.appendChild(removeImage);
     buttonsDiv.appendChild(editBtnDiv);
 
+    // EventListener functions for each button
+    makeRemoveEvent(removeImage, article, id);
+
     // Appending textDiv and ButtonsDiv to article
     article.appendChild(textDiv);
     article.appendChild(buttonsDiv);
@@ -96,4 +99,28 @@ const render = (arr) => {
     // Appending article to tasks sections in dom
     document.querySelector(".tasks").appendChild(article);
   }
+};
+
+const makeRemoveEvent = (btn, task, id) => {
+  let clicked = false;
+  let timeOut;
+
+  btn.addEventListener("click", () => {
+    if (clicked) {
+      clicked = false;
+      clearTimeout(timeOut);
+      task.classList.remove("done");
+    } else {
+      clicked = true;
+      task.classList.add("done");
+
+      timeOut = setTimeout(() => {
+        if (clicked) {
+          tasksArr = tasksArr.filter((task) => task.id !== id);
+          render(tasksArr);
+          // task.remove();
+        }
+      }, 2000);
+    }
+  });
 };
