@@ -36,9 +36,9 @@ main { background: #fff; width: 90vw; height: 90vh; border-radius: 10px; padding
 
 .task__action:hover { cursor: pointer; }
 
-.task__edit a { font-size: 1.5rem; color: #005866; }
+.task__edit { font-size: 1.5rem; color: #005866; }
 
-.task__edit a:hover { color: #00d4f5; }
+.task__edit:hover { color: #00d4f5; cursor: pointer; }
 
 .done { background-color: #d9d9d9; }
 

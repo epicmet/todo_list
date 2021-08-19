@@ -33,13 +33,14 @@
     }
   }
 
-  &__edit a {
+  &__edit {
     font-size: 1.5rem;
     color: $primary-color;
   }
 
-  &__edit a:hover {
+  &__edit:hover {
     color: $accent-color;
+    cursor: pointer;
   }
 }
 
