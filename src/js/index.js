@@ -6,6 +6,8 @@ import {
 } from "./modal.js";
 
 let tasksArr = [];
+let isEditing = false;
+let editingID = null;
 
 // opening and close modal
 const footerBtn = document.querySelector(".footer__btn");
@@ -25,7 +27,13 @@ modalFrom.addEventListener("submit", (e) => {
 
   //validate data and return the task object
   let valid = validateData();
-  if (valid) makeTask();
+  if (valid) {
+    if (isEditing) {
+      editTask();
+    } else {
+      makeTask();
+    }
+  }
   //TODO: sort task by time
 });
 
@@ -46,6 +54,18 @@ const makeTask = () => {
 
   render(tasksArr);
 
+  closeModal();
+};
+
+const editTask = () => {
+  const index = tasksArr.findIndex((task) => task.id === editingID);
+  const taskObj = tasksArr[index];
+  taskObj.text = document.querySelector(".modal__input").value;
+  taskObj.date = document.querySelector(".modal__date").value;
+
+  isEditing = false;
+  editingID = null;
+  render(tasksArr);
   closeModal();
 };
 
@@ -91,6 +111,7 @@ const render = (arr) => {
 
     // EventListener functions for each button
     makeRemoveEvent(removeImage, article, id);
+    makeEditEvent(editBtnDiv, text, date, id);
 
     // Appending textDiv and ButtonsDiv to article
     article.appendChild(textDiv);
@@ -122,5 +143,20 @@ const makeRemoveEvent = (btn, task, id) => {
         }
       }, 2000);
     }
+  });
+};
+
+const makeEditEvent = (btn, text, date, id) => {
+  btn.addEventListener("click", () => {
+    isEditing = true;
+    editingID = id;
+    const modal = document.querySelector(".modal");
+    const modalTodo = document.querySelector(".modal__todo");
+    modalTodo.value = text;
+    const modalDate = document.querySelector(".modal__date");
+    modalDate.value = date;
+
+    modal.style.display = "flex";
+    document.querySelector(".modal__input").focus();
   });
 };
