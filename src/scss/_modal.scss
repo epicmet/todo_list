@@ -40,6 +40,9 @@
   margin: 15px;
   padding: 5px;
   font-size: 2rem;
+  &:focus {
+    border: 2px solid $secondary-color;
+  }
 }
 
 .modal__button {

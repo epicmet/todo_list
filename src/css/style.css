@@ -58,6 +58,8 @@ main { background: #fff; width: 90vw; height: 90vh; border-radius: 10px; padding
 
 .modal__input { width: 100%; margin: 15px; padding: 5px; font-size: 2rem; }
 
+.modal__input:focus { border: 2px solid #009fb8; }
+
 .modal__button { padding: 10px; margin: 15px; font-size: 2rem; background-color: #005866; border-radius: 10px; border: none; color: #fff; }
 
 .error { border: 2px solid red; }
