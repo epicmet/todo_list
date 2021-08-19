@@ -6,7 +6,7 @@
   margin: 10px 0;
   padding: 10px;
   box-shadow: 0px 3px 10px darken($white-color, 50%);
-  border-left: 10px red solid;
+  border-left: 10px $primary-color solid;
 
   &__buttons {
     display: flex;
