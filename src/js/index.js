@@ -36,10 +36,12 @@ const makeTask = () => {
   const todoInputValue = document.querySelector(".modal__input").value;
   const dateInputValue = document.querySelector(".modal__date").value;
 
+  const id = Date.now();
+
   arr.push({
     text: todoInputValue,
     date: dateInputValue,
-    // isRendered: false,
+    id: id,
   });
 
   render(arr);
