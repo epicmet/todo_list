@@ -39,9 +39,59 @@ const makeTask = () => {
   arr.push({
     text: todoInputValue,
     date: dateInputValue,
-    priBtn: "red",
+    // isRendered: false,
   });
 
+  render(arr);
+
   closeModal();
-  console.log(arr);
+};
+
+const render = (arr) => {
+  const allTasks = document.querySelectorAll(".task");
+
+  // Clear tasksSection
+  for (let task of allTasks) {
+    task.remove();
+  }
+
+  // Rerender every task
+  for (let taskObj of arr) {
+    const { text, date } = taskObj;
+    // Making article tag and adding its classList
+    const article = document.createElement("article");
+    article.classList.add("task");
+
+    // Making task texts that include the message for task and date
+    const textDiv = document.createElement("div");
+    textDiv.classList.add("task__texts");
+    const todoText = document.createElement("p");
+    todoText.classList.add("task__todo");
+    todoText.innerHTML = text;
+    const dateText = document.createElement("p");
+    dateText.classList.add("task__date");
+    dateText.innerHTML = date;
+    textDiv.appendChild(todoText);
+    textDiv.appendChild(dateText);
+
+    // Making buttons for each task
+    const buttonsDiv = document.createElement("div");
+    buttonsDiv.classList.add("task__buttons");
+    const removeImage = document.createElement("img");
+    removeImage.classList.add("task__action");
+    removeImage.src =
+      "https://img.icons8.com/fluency/240/000000/delete-sign.png";
+    const editBtnDiv = document.createElement("div");
+    editBtnDiv.classList.add("task__edit");
+    editBtnDiv.innerHTML = "Edit";
+    buttonsDiv.appendChild(removeImage);
+    buttonsDiv.appendChild(editBtnDiv);
+
+    // Appending textDiv and ButtonsDiv to article
+    article.appendChild(textDiv);
+    article.appendChild(buttonsDiv);
+
+    // Appending article to tasks sections in dom
+    document.querySelector(".tasks").appendChild(article);
+  }
 };
