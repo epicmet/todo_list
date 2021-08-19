@@ -15,7 +15,6 @@ window.addEventListener("click", (e) => {
   const modal = document.querySelector(".modal");
   if (e.target == modal) {
     closeModal();
-    emptyInputs();
   }
 });
 
