@@ -9,6 +9,19 @@ let tasksArr = [];
 let isEditing = false;
 let editingID = null;
 
+// Show default-bg if there is no tasks
+const checkTasks = () => {
+  if (tasksArr.length === 0) {
+    document.querySelector(".default-bg").style.display = "flex";
+    document.querySelector(".tasks").style.display = "none";
+  } else {
+    document.querySelector(".default-bg").style.display = "none";
+    document.querySelector(".tasks").style.display = "flex";
+  }
+};
+
+checkTasks();
+
 // opening and close modal
 const footerBtn = document.querySelector(".footer__btn");
 footerBtn.addEventListener("click", openModal);
@@ -72,9 +85,10 @@ const editTask = () => {
 };
 
 const render = (arr) => {
-  const allTasks = document.querySelectorAll(".task");
+  checkTasks();
 
   // Clear tasksSection
+  const allTasks = document.querySelectorAll(".task");
   for (let task of allTasks) {
     task.remove();
   }
