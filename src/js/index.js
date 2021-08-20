@@ -52,6 +52,7 @@ const makeTask = () => {
     id: id,
   });
 
+  sortByTime();
   render(tasksArr);
 
   closeModal();
@@ -65,6 +66,7 @@ const editTask = () => {
 
   isEditing = false;
   editingID = null;
+  sortByTime();
   render(tasksArr);
   closeModal();
 };
@@ -158,5 +160,13 @@ const makeEditEvent = (btn, text, date, id) => {
 
     modal.style.display = "flex";
     document.querySelector(".modal__input").focus();
+  });
+};
+
+const sortByTime = () => {
+  tasksArr.sort((a, b) => {
+    let first = Number(a.date.replaceAll("-", ""));
+    let second = Number(b.date.replaceAll("-", ""));
+    return first - second;
   });
 };
