@@ -106,7 +106,14 @@ const render = (arr) => {
     todoText.innerHTML = text;
     const dateText = document.createElement("p");
     dateText.classList.add("task__date");
-    dateText.innerHTML = date;
+    dateText.innerHTML = new Date(date).toDateString();
+    if (dateText.innerHTML == new Date().toDateString()) {
+      const span = document.createElement("span");
+      span.classList.add("today");
+      span.innerHTML = "Today";
+      dateText.appendChild(span);
+    }
+
     textDiv.appendChild(todoText);
     textDiv.appendChild(dateText);
 

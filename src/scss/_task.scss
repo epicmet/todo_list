@@ -48,7 +48,13 @@
   background-color: darken($white-color, 15%);
 }
 
-// .action--done {
-//   border: none;
-//   background-color: greenyellow;
-// }
+.today {
+  color: $white-color;
+  background-color: $badge-color;
+  border-radius: 20px;
+  padding: 5px;
+  margin: 5px;
+  font-size: 1.05rem;
+  position: absolute;
+  transform: translate(3px, -2px);
+}
