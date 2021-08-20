@@ -22,7 +22,7 @@ const checkTasks = () => {
 
 checkTasks();
 
-// opening and close modal
+// Opening and closing modal events
 const footerBtn = document.querySelector(".footer__btn");
 footerBtn.addEventListener("click", openModal);
 
@@ -33,12 +33,12 @@ window.addEventListener("click", (e) => {
   }
 });
 
-// submiting modal form to validate
+// Submiting modal form
 const modalFrom = document.querySelector(".modal__form");
 modalFrom.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  //validate data and return the task object
+  // Validate data make task or edit an existing task
   let valid = validateData();
   if (valid) {
     if (isEditing) {
@@ -47,10 +47,8 @@ modalFrom.addEventListener("submit", (e) => {
       makeTask();
     }
   }
-  //TODO: sort task by time
 });
 
-// after validation make the task
 const makeTask = () => {
   removeErrorClass();
 
@@ -87,16 +85,16 @@ const editTask = () => {
 const render = (arr) => {
   checkTasks();
 
-  // Clear tasksSection
+  // Clear tasksSection befor re-rendering
   const allTasks = document.querySelectorAll(".task");
   for (let task of allTasks) {
     task.remove();
   }
 
-  // Rerender every task
+  // Re-render every task
   for (let taskObj of arr) {
     const { text, date, id } = taskObj;
-    // Making article tag and adding its classList
+
     const article = document.createElement("article");
     article.classList.add("task");
 
@@ -129,7 +127,7 @@ const render = (arr) => {
     makeRemoveEvent(removeImage, article, id);
     makeEditEvent(editBtnDiv, text, date, id);
 
-    // Appending textDiv and ButtonsDiv to article
+    // Appending texts and Buttons to article
     article.appendChild(textDiv);
     article.appendChild(buttonsDiv);
 
@@ -155,7 +153,6 @@ const makeRemoveEvent = (btn, task, id) => {
         if (clicked) {
           tasksArr = tasksArr.filter((task) => task.id !== id);
           render(tasksArr);
-          // task.remove();
         }
       }, 2000);
     }
