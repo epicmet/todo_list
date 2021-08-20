@@ -1,7 +1,7 @@
 {
   "name": "todo_list",
   "version": "1.0.0",
-  "description": "See the result [here](https://todo-list.mahdiaghaei1.vercel.app/)",
+  "description": "A simple todo-list",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
