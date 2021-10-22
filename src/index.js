@@ -1,11 +1,6 @@
 import "./scss/style.scss";
 
-import {
-  openModal,
-  closeModal,
-  validateData,
-  removeErrorClass,
-} from "./modal.js";
+import { openModal, closeModal, validateData, removeErrorClass } from "./modal";
 
 import deleteIcon from "../assets/todo-delete-sign.png";
 
