@@ -7,6 +7,8 @@ import {
   removeErrorClass,
 } from "./modal.js";
 
+import deleteIcon from "../assets/todo-delete-sign.png";
+
 let tasksArr = [];
 let isEditing = false;
 let editingID = null;
@@ -124,8 +126,7 @@ const render = (arr) => {
     buttonsDiv.classList.add("task__buttons");
     const removeImage = document.createElement("img");
     removeImage.classList.add("task__action");
-    removeImage.src =
-      "https://img.icons8.com/fluency/240/000000/delete-sign.png";
+    removeImage.src = deleteIcon;
     const editBtnDiv = document.createElement("div");
     editBtnDiv.classList.add("task__edit");
     editBtnDiv.innerHTML = "Edit";
