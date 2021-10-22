@@ -1,3 +1,5 @@
+import "./scss/style.scss";
+
 import {
   openModal,
   closeModal,
