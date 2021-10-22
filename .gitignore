@@ -5,5 +5,4 @@ oldCode/
 *.log
 *.jpg
 .vercel
-templates/
 dist/
