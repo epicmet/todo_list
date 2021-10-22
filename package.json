@@ -4,7 +4,8 @@
   "description": "A simple todo-list",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config webpack.common.js"
+    "start": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
