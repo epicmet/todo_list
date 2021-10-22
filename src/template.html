@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo List</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/png" href="./assets/fav_icon.png" />
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <img
+          src="https://img.icons8.com/color/96/000000/list.png"
+          class="hero__icon"
+        />
+        <h1 class="hero__title">Todo</h1>
+      </header>
+
+      <section class="default-bg">
+        <img
+          src="https://img.icons8.com/nolan/96/todo-list.png"
+          class="default-bg__img"
+        />
+        <h2 class="default-bg__text">Add a task to get started</h2>
+      </section>
+
+      <section class="tasks"></section>
+
+      <section class="footer">
+        <button class="footer__btn">+</button>
+      </section>
+    </main>
+
+    <div class="modal">
+      <div class="modal-content">
+        <h2 class="modal__title">Create new task</h2>
+        <form class="modal__form">
+          <label for="todo_input">Title :</label>
+          <input
+            class="modal__input modal__todo"
+            placeholder="Task text"
+            type="todo"
+            id="todo_input"
+          />
+          <label for="date_input">Date :</label>
+          <input class="modal__input modal__date" type="date" id="date_input" />
+
+          <button class="modal__button" type="submit">Add task</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
