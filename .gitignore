@@ -6,3 +6,4 @@ oldCode/
 *.jpg
 .vercel
 templates/
+dist/
